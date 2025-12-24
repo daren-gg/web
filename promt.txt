@@ -1,0 +1,52 @@
+Build a landing page for "daren.gg" - a League of Legends performance overlay for Mac.
+
+Its specialty is that it's built for Mac. Native APIs. Big Future. Should have two things. A profile page, where you can look up your own League of Legends profile or like someone else's. (coming soon)
+And the overlay app. Which has the specialties. (ind evelopment)
+
+Design Inspiration:
+- Take extremey heavy inspiration from Next.js (nextjs.org) and Vercel (vercel.com) websites, in terms of design, animations, layout.
+- Minimalistic, clean, modern design system
+- Subtle, refined animations (nothing excessive)
+- Professional tech product feel
+
+Technical Requirements:
+- Full light/dark mode support with seamless toggle
+- Use shadcn/ui components throughout
+- Tailwind CSS for styling
+- Responsive design (mobile-first)
+
+Page Structure:
+1. Hero Section
+   - Clean headline: "The League of Legends overlay built for performance"
+   - Subtle animated gradient background (very gentle, like Vercel's)
+   - Single prominent CTA: "Download for Mac" (just UI, not functional yet)
+   - Small secondary link: "View on App Store" (greyed out/coming soon state)
+
+2. Features Section (3-4 cards)
+   - Real-time game stats overlay
+   - Champion information and builds
+   - Customizable, non-intrusive UI
+   - Optimized for Mac performance
+   - Use subtle hover animations on cards
+
+3. Visual Preview Section
+   - Placeholder for app screenshot/demo
+   - Clean container with subtle shadow/border
+
+4. Footer
+   - Minimal: Links, GitHub, social (just structure)
+
+Design Philosophy:
+- Lots of whitespace
+- Subtle micro-interactions
+- Smooth transitions (200-300ms)
+- Professional gradient accents (very subtle)
+- Typography-focused
+- Clean, not gamey
+
+Color Palette:
+- Light mode: clean whites, soft grays
+- Dark mode: deep blacks, subtle grays
+- Accent: Single refined color (you choose based on modern design trends)
+
+Start with the hero section and we'll iterate from there.

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>daren.gg - League of Legends Overlay for Mac</title>
+<meta name="description" content="daren.gg is a native macOS overlay for League of Legends that shows your live in-game performance, color-coded against your rank, using the Riot Games API.">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><img src="public/wolf-logo.png" alt="" width="24" height="24">daren.gg</a>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/daren-gg/web">GitHub</a>
+  </nav>
+</header>
+
+<hr>
+
+<div class="cols">
+
+  <div class="col-left">
+    <h1>The League of Legends overlay built for Mac</h1>
+    <p>daren.gg is a native macOS overlay for League of Legends. It shows your live in-game performance and color-codes it against your rank — built natively for macOS using the official Riot Games API.</p>
+    <p class="muted">macOS 12.0 or later &bull; Apple Silicon &amp; Intel &bull; Coming soon to the Mac App Store</p>
+
+    <h2>What it does</h2>
+    <ul>
+      <li><b>Real-time stats</b> — live game statistics and performance metrics during your matches.</li>
+    </ul>
+
+    <h2>How it works</h2>
+    <ol>
+      <li><b>Launch Daren</b> — it runs natively on macOS and sits in your menu bar. No account or login required.</li>
+      <li><b>Start a game</b> — Daren automatically detects when your League match begins through the local League Client.</li>
+      <li><b>See your live stats</b> — a small, draggable, click-through overlay appears with your KDA, gold/min, CS/min, and vision/min, updating throughout the game.</li>
+      <li><b>Know if you're ahead</b> — every stat is color-coded against typical numbers for your rank, so you can tell at a glance what's strong and what to work on.</li>
+      <li><b>Make it yours</b> — toggle the overlay with a global hotkey, choose which stats are shown, and pick which rank to compare against.</li>
+    </ol>
+
+    <h2>How it uses the Riot Games API</h2>
+    <p>daren.gg is a native Mac app written in Swift and SwiftUI. It's a public app for any League player on Mac, so we're applying for a Riot Games <b>production API key</b> — a personal key isn't enough for an app other people install and use.</p>
+    <p>Here's exactly what we call, and why:</p>
+    <ul>
+      <li><b>League Client Data API</b> — <code>https://127.0.0.1:2999/liveclientdata/allgamedata</code>. This runs on your own computer while you're in a game and gives us your live stats: KDA, gold, CS, items, and your Riot ID. It's local to your machine, so it needs no key. We check it about once a second during a game, and slow down to roughly every 10 seconds when you're not in one.</li>
+      <li><b>Account-v1</b> — <code>/riot/account/v1/accounts/by-riot-id/{name}/{tag}</code>. Takes your Riot ID from the live game and looks up your PUUID (your account's global ID).</li>
+      <li><b>Summoner-v4</b> — <code>/lol/summoner/v4/summoners/by-puuid/{puuid}</code>. Gets your summoner record for that account.</li>
+      <li><b>League-v4</b> — <code>/lol/league/v4/entries/by-summoner/{summonerId}</code>. Gets your ranked tier and division, which we use to pick the right rank to compare your stats against.</li>
+      <li><b>Data Dragon</b> — Riot's static data files, for champion names, IDs, and item costs. No key needed.</li>
+    </ul>
+    <p>The rank benchmarks (the "good vs. bad for your rank" numbers) come from publicly available champion stats, not from the Riot API.</p>
+    <p>We only read data — we never write anything or do anything inside the game, and we only ever pull your own stats, never other players'. The <b>production key</b> is needed for the Account-v1, Summoner-v4, and League-v4 calls, which run once per account for every person who uses the app.</p>
+    <p>See our <a href="privacy.html">Privacy Policy</a> for what's stored.</p>
+  </div>
+
+  <div class="col-right">
+    <video loop muted autoplay playsinline poster="public/demo-poster.jpg">
+      <source src="public/demo.mp4" type="video/mp4">
+      <p>Your browser can't play this video. <a href="public/demo.mp4">Download the demo clip (MP4)</a>.</p>
+    </video>
+    <img src="public/preview-1.png" alt="daren.gg overlay customization">
+    <img src="public/preview-2.png" alt="daren.gg overlay in action">
+  </div>
+
+</div>
+
+<footer>
+  <a href="about.html">About</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="https://arryan.xyz/">Support</a>
+  <br>
+  &copy; 2025 Arryan Bhatnagar. daren.gg
+  <p class="muted">daren.gg isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+</footer>
+
+</body>
+</html>

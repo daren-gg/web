@@ -2,29 +2,40 @@
 
 League of Legends performance overlay and stats platform built for Mac.
 
-## Features
+This is the **static** marketing site: plain HTML and CSS, no build step, no
+JavaScript, no framework. It loads on essentially any browser or device and
+on the slowest connections, and the full content is present in the raw HTML
+so simple crawlers and verification bots can read it.
 
-- **Real-time Overlay** - In-game stats and champion insights with native macOS performance
-- **Stats Lookup** - Search summoners and champions with live match data
-- **Light/Dark Mode** - Seamless theme switching with system preference support
-- **Native Performance** - Built with macOS APIs for minimal resource usage
+## Pages
 
-## Tech Stack
+- `index.html` — home / landing page
+- `about.html` — about
+- `privacy.html` — privacy policy
+- `404.html` — not-found page
+- `riot.txt` — Riot Games domain verification file (must stay at the web root)
 
-- Next.js 15 (App Router)
-- React 19
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
+## Assets
 
-## Development
+- `style.css` — single stylesheet (system fonts, hex colours, graceful degradation)
+- `favicon.ico`
+- `public/` — images (wolf logo, App Store badge, screenshots)
+
+## Running locally
+
+It's just static files — open `index.html` in a browser, or serve the folder:
 
 ```bash
-npm install
-npm run dev
+python3 -m http.server
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Then open http://localhost:8000
+
+## Deploying
+
+Upload the folder to any static host (GitHub Pages, Netlify, Cloudflare Pages,
+S3, plain Apache/nginx). No server-side runtime is required. Keep `riot.txt`
+reachable at `https://your-domain/riot.txt`.
 
 ## License
 
